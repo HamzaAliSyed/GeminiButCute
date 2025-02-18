@@ -1,7 +1,9 @@
+import SearchBar from "./SearchBar";
+
 const SideBar = () => {
     return (
-        <div className="border w-[30%] border-black">
-            SideBar will go here
+        <div className="basis-[23%] flex-shrink-0 bg-slate-500 p-4">
+            <SearchBar />
         </div>
     );
 };

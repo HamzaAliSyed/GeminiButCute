@@ -1,6 +1,6 @@
 const MainChatWindow = () => {
     return (
-        <div className="border border-black w-[70%]">
+        <div className="basis-[77%] flex-shrink-0 p-4">
             Main Chat Window goes here
         </div>
     );
