@@ -2,6 +2,7 @@ package main
 
 import (
 	"backend/internal/database"
+	"backend/internal/services"
 	"fmt"
 	"log"
 	"net/http"
@@ -20,6 +21,9 @@ func main() {
 	}
 
 	log.Printf("HTTP server is starting on port %s", port)
+
+	response := services.CallToGemini("Goto the interent and find me the latest score of Babar Azam in an international match which is an ODI")
+	fmt.Println(response)
 
 	if serverStartError := http.ListenAndServe(":"+port, nil); serverStartError != nil {
 		log.Fatalf("Server failed: %v", serverStartError)
