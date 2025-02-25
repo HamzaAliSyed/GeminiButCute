@@ -7,6 +7,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 func main() {
@@ -20,10 +22,19 @@ func main() {
 		log.Fatal("Port is not defined")
 	}
 
-	log.Printf("HTTP server is starting on port %s", port)
+	sampleUserID, idCreationError := primitive.ObjectIDFromHex("507f1f77bcf86cd799439011")
+	if idCreationError != nil {
+		fmt.Println("Cannot create ID")
+	}
 
-	response := services.CallToGemini("Goto the interent and find me the latest score of Babar Azam in an international match which is an ODI")
-	fmt.Println(response)
+	chat, chatError := services.CreateAChat(sampleUserID, "Are atheist persecuted in Pakistan")
+	if chatError != nil {
+		fmt.Printf("Something went wrong\n%v", chatError)
+	}
+
+	fmt.Println(chat)
+
+	log.Printf("HTTP server is starting on port %s", port)
 
 	if serverStartError := http.ListenAndServe(":"+port, nil); serverStartError != nil {
 		log.Fatalf("Server failed: %v", serverStartError)
