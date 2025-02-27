@@ -1,11 +1,9 @@
-import MainChatWindow from "./components/MainChatWindow"
-import SideBar from "./components/SideBar"
+import SignUp from "./components/SignUp"
 
 function App() {
   return (
-    <div className="flex w-full min-h-screen">
-      <SideBar />
-      <MainChatWindow />
+    <div>
+      <SignUp />
     </div>
   )
 }

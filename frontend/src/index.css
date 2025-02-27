@@ -1,1 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "jost", sans-serif;
+    height: 100%;
+    background-color: #f1f1f1be;
+}
+
+.background-image {
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("/assets/background.png");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
