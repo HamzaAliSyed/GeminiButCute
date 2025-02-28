@@ -1,9 +1,9 @@
-import SignUp from "./components/SignUp"
+import ChatPage from "./components/ChatPage"
 
 function App() {
   return (
     <div>
-      <SignUp />
+      <ChatPage />
     </div>
   )
 }
